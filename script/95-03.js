@@ -2,12 +2,12 @@
 
 // Сделайте стикеры для оставления коротких записей. Стикеры должны представлять собой блоки текста, расположенные на странице в виде плиточки. Пользователь может создавать новые стикеры через textarea, а также редактировать и удалять их. Каждый новый стикер должен добавляться в конец плиточки.
 
-let check = document.getElementById('check')
+/* let check = document.getElementById('check')
 check.addEventListener('click', () => {
    console.log(EDITOR, 'EDITOR');
    console.log(memory, 'memory');
    console.log(deleted, 'deleted');
-})
+}) */
 
 // разворачиваем базовые элементы
 
