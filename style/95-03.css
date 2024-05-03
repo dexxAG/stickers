@@ -1,0 +1,342 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+#check {
+   position: fixed;
+   top: 10px;
+   left: 10px;
+}
+
+/* body {
+	height: 100%;
+} */
+
+.border-dotted-right {
+   border-right: 1px dotted black;
+}
+
+.border-dotted-left {
+   border-left: 1px dotted black;
+}
+
+/* шрифты -----------------------------------------*/
+
+.fontBIG {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 25px;
+   line-height: 30px;
+}
+
+.fontDEF {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 17px;
+   line-height: 20px;
+}
+
+/* окно -----------------------------------------*/
+
+.main {
+   display: flex;
+	flex-direction: column;
+}
+
+.stickersZone {
+   background-color: rgb(228, 228, 228);
+
+   height: calc(100vh - 200px);
+
+   overflow-y: auto;
+
+   padding: 30px;
+   display: flex;
+   justify-content: space-evenly;
+   align-content: flex-start;
+   flex-wrap: wrap;
+   gap: 30px;
+}
+
+.editZoneWide {
+   height: 200px;
+   border-top: 1px dotted black;
+   background-color: rgb(219, 240, 233);
+
+   display: flex;
+   justify-content: center;
+}
+
+/* редактор -----------------------------------------*/
+
+.editZone {
+   width: 40%;
+   height: 100%;
+   /* margin: 0 auto; */
+   display: flex;
+   flex-direction: column;
+}
+
+.formClass {
+   /* padding-top: 10px; */
+
+   display: flex;
+   flex-direction: column;
+
+   position: relative;
+}
+
+.labelClass {
+   padding: 10px;
+   text-align: center;
+}
+
+textarea {
+   resize: none;
+   
+}
+
+.textAreaClass {
+   min-height: 159px;
+
+   width: 100%;
+   padding: 15px 70px 15px 15px;
+   border: none;
+
+}
+
+/* смена стилей текста и бэкграунда -----------------------------------------*/
+
+.sidebar {
+   width: 60px;
+   /* background-color: blueviolet; */
+   display: flex;
+   flex-direction: column;
+
+   transition: transform 0.5s ease;
+}
+
+.sidebarLabel {
+   padding: 7px;
+   line-height: 13px;
+   text-align: center;
+}
+
+.colVariants {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+
+   height: 160px;
+}
+
+.variant {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+
+   transition: all .3s ease;
+}
+
+.variant:hover {
+   cursor: pointer;
+   transform: scale(1.1);
+}
+
+.variantActive {
+   outline: 1px gray dotted;
+}
+
+ 
+/* сабмит и esc -----------------------------------------*/
+
+.buttonSubmit {
+   right: 10px;
+   bottom: 10px;
+}
+
+.buttonEsc {
+   right: 10px;
+   top: 50px;
+}
+
+.hidden {
+   /* display: none; */
+   transform: scale(0);
+}
+
+.buttonClass {
+   position: absolute;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   width: 50px;
+   height: 50px;
+
+   border: none;
+   background: transparent;
+
+   transition: transform 0.5s ease;
+}
+
+
+.buttonClass:hover {
+   cursor: pointer;
+
+   transform: scale(1.1);
+}
+
+.buttonClass:active {
+   transform: scale(0.4);
+}
+
+
+.buttonIconClass {
+   /* filter: invert(); */
+   width: 50px;
+   height: 50px;
+   pointer-events: none;
+}
+
+/* стикер -----------------------------------------*/
+
+.sticker {
+   /* margin: 150px auto; */
+   width: 250px;
+   height: 100px;
+   border: 1px gray;
+   border-style: solid;
+
+   /* background-color: rgb(214, 235, 247); */
+
+   display: flex;
+   flex-direction: row;
+
+   transition: transform 0.3s ease;
+}
+
+.editing {
+   animation-name: border-change;
+   animation-duration: 1.5s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   animation-timing-function: ease;
+}
+
+@keyframes border-change {
+   from {
+      border-style: solid;
+      border-color: gray;
+   }
+   50% {
+      border-color: white;
+   }
+   to {
+      /* border-style: dashed; */
+      border-color: gray;
+   }
+}
+
+.sticker:hover {
+   transform: scale(1.05);
+}
+
+/* .stickerEditing {
+   border: 
+} */
+
+.stickerButtonsWrap {
+   width: 40px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+/* кнопки стикера -----------------------------------------*/
+
+.stickerButton {
+   cursor: pointer;
+
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   border: none;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   opacity: 0.5;
+   transition: all .3s ease;
+}
+
+.stickerButton:hover {
+   transform: scale(1.1);
+   opacity: 1;
+}
+
+.stickerButtonEdit {
+   background-color: rgb(250, 250, 187);
+}
+
+.stickerButtonTop {
+   background-color: rgb(215, 250, 215);
+}
+
+.stickerButtonDel {
+   background-color: rgb(247, 198, 198);
+}
+
+.stickerButtonImg {
+   pointer-events: none;
+   width: 14px;
+}
+
+/* текст стикера -----------------------------------------*/
+
+.stickerTextWrap {
+   width: 210px;
+   /* background-image: url(./sound.png);
+   background-position: center bottom;
+   background-size: 15%;
+   background-repeat: no-repeat; */
+}
+
+.stickerText {
+   padding: 10px;
+   word-wrap: break-word;
+}
+
+/* стили для стикеров и поля ввода -----------------------------------------*/
+
+.whiteBG {
+   background-color: white;
+}
+
+.whiteText {
+   color: rgb(196, 196, 196);
+}
+
+.blackBG {
+   background-color: rgb(71, 71, 71);
+}
+
+.blackText {
+   color: black;
+}
+
+.blueBG {
+   background-color: rgb(86, 187, 250);
+}
+
+.blueText {
+   color: rgb(63, 63, 206)
+}
